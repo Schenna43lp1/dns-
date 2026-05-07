@@ -7,8 +7,10 @@ RUN apt-get update \
 
 COPY index.php /var/www/html/index.php
 COPY config.php /var/www/html/config.php
+COPY config-editor.php /var/www/html/config-editor.php
 
 RUN mkdir -p /var/www/html/data \
-    && chown -R www-data:www-data /var/www/html/data
+    && chown -R www-data:www-data /var/www/html/data \
+    && chown www-data:www-data /var/www/html/config.php
 
 EXPOSE 80
