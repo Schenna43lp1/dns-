@@ -1,0 +1,10 @@
+services:
+  dns-checker:
+    build: .
+    container_name: dns-checker
+    ports:
+      - "8080:80"
+    volumes:
+      - ./data:/var/www/html/data
+      - ./config.php:/var/www/html/config.php
+    restart: unless-stopped
