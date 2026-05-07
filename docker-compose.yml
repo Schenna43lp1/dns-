@@ -5,6 +5,9 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./data:/var/www/html/data
+      - dns_checker_data:/var/www/html/data
       - ./config.php:/var/www/html/config.php
     restart: unless-stopped
+
+volumes:
+  dns_checker_data:
